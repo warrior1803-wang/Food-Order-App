@@ -7,8 +7,8 @@ function App() {
   return (
     <Fragment>
    <Header></Header>
-   <main><Meals></Meals></main>
-   
+   <main></main>
+   <Meals></Meals>
    </Fragment>
   );
 }
