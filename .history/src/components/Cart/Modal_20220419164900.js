@@ -1,0 +1,1 @@
+ const Modal = this.props.first
