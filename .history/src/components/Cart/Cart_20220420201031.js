@@ -11,7 +11,7 @@ const Cart = (props) => {
     </ul>
   );
   const cartCtx = useContext(CartContext)
- 
+ const 
   return (
     <Modal onClose={props.onClose}>
       {cartItem}
@@ -21,7 +21,7 @@ const Cart = (props) => {
       </div>
       <div className={classes.actions}>
         <button className={classes["button--alt"]} onClick={props.onClose}>Close</button>
-        <button className={classes.button} onClick={cartCtx.addItem()}>Order</button>
+        <button className={classes.button} >Order</button>
       </div>
       </Modal>
   );

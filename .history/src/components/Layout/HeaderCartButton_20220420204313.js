@@ -4,7 +4,7 @@ import CartIcon from "../Cart/CartIcon";
 import classes from './HeaderCartButton.module.css'
 const HeaderCartButton = (props) => {
  const cartCtx =useContext(CartContext)
- const cartItemNum = cartCtx.item.reduce()
+ const cartItemNum = cartCtx.
   return (
       
     <button onClick={props.onOpen} className={classes.button} >

@@ -1,15 +1,14 @@
 import React from 'react'
 const CartContext=React.createContext({
-    items:[],
+    item:[],
     totalAmount:0,
     addItem:()=>{},
     removeItem:(id)=>{}
 });
 export const CartProvider = props =>{
-    const addItemHandler = item =>{};
-    const removeItemHandler = item =>{}
+    const addItemHandler = item =>()
     return(
-        <CartContext.Provider addItem={addItemHandler} removeItem={removeItemHandler}>
+        <CartContext.Provider>
             {props.children}
         </CartContext.Provider>
     )
