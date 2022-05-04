@@ -19,12 +19,7 @@ const cartRuducer = (state,action)=>{
             items:updatedItems,
             totalAmount:updatedTotalAmount
         }
-        case 'REMOVE':
-            return{
-
-            }
-            default:
-                return defaultCartState
+        case ''
    }
     // if (action.type==='ADD') {
 

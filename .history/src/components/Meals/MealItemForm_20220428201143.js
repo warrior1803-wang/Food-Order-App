@@ -21,13 +21,13 @@ const MealItemForm = (props) => {
   return (
     <form className={classes.form} onSubmit={submitHandler} >
       <Input
-      //这样input里的值就会和ref挂钩在一起，可以log出来看看
+      //
         ref={amountInputRef}
         label="Amount"
         input={{
           type: "number",
           id: "amount_" + props.id,
-          min: "1", 
+          min: "1",
           max: "5",
           step: "1",
           defaultValue: "0",

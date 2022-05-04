@@ -27,7 +27,7 @@ const MealItemForm = (props) => {
         input={{
           type: "number",
           id: "amount_" + props.id,
-          min: "1", 
+          min: "1",
           max: "5",
           step: "1",
           defaultValue: "0",

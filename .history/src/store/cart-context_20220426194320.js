@@ -11,20 +11,13 @@ const defaultCartState = {
     totalAmount:0
 }
 const cartRuducer = (state,action)=>{
-   switch(action.type){
-       case 'ADD':
-        const updatedItems = state.items.concat(action.item);
+   switch(action.type==='ADD'){
+               const updatedItems = state.items.concat(action.item);
         const updatedTotalAmount = state.totalAmount+action.item.price*action.item.amount;
         return{
             items:updatedItems,
             totalAmount:updatedTotalAmount
         }
-        case 'REMOVE':
-            return{
-
-            }
-            default:
-                return defaultCartState
    }
     // if (action.type==='ADD') {
 

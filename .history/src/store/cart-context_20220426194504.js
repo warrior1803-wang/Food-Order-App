@@ -24,7 +24,7 @@ const cartRuducer = (state,action)=>{
 
             }
             default:
-                return defaultCartState
+                
    }
     // if (action.type==='ADD') {
 
