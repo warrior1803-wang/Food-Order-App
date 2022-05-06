@@ -18,22 +18,9 @@ const cartRuducer = (state, action) => {
       const existingCartItemIndex = state.items.findIndex(
         (item) => item.id === action.item.id
       );
-      const existingCartItem = state.items[existingCartItemIndex]
-      let updatedItem;
-      let updatedItems;
-      if (existingCartItem) {
-          updatedItem={
-              ...existingCartItem,
-              amount:existingCartItem.amount+action.item.amount
-          }
-          updatedItems=[...state.items]
-          updatedItems[existingCartItemIndex]=updatedItem
-      }else{
-          updatedItem={...action.item}
-          //concat join arrays
+      const existingCartItem = 
+      //concat join arrays
       const updatedItems = state.items.concat(action.item);
-      }
-      
 
       return {
         items: updatedItems,

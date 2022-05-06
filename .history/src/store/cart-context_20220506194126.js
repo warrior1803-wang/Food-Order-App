@@ -23,17 +23,12 @@ const cartRuducer = (state, action) => {
       let updatedItems;
       if (existingCartItem) {
           updatedItem={
-              ...existingCartItem,
-              amount:existingCartItem.amount+action.item.amount
+              ...existingCartItem
           }
-          updatedItems=[...state.items]
-          updatedItems[existingCartItemIndex]=updatedItem
-      }else{
-          updatedItem={...action.item}
-          //concat join arrays
-      const updatedItems = state.items.concat(action.item);
+          
       }
-      
+      //concat join arrays
+      const updatedItems = state.items.concat(action.item);
 
       return {
         items: updatedItems,
