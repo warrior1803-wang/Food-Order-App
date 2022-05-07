@@ -13,34 +13,27 @@ const defaultCartState = {
 const cartRuducer = (state, action) => {
   switch (action.type) {
     case "ADD":
-      const updatedTotalAmount =
-        state.totalAmount + action.item.price * action.item.amount;
+//       const prevStateItems = [...state.items];
+//       console.log(prevStateItems)
+//       for (const item of prevStateItems) {
+//         if (item.id === action.item.id) {
+//             console.log(item.amount,action.item.amount)
+//           item.amount = item.amount+ action.item.amount;
+//           console.log(item.amount)
+//           const updatedTotalAmount =
+//             state.totalAmount + action.item.price * action.item.amount;
+//           const updatedItems = prevStateItems;
+//           return { items: updatedItems, totalAmount: updatedTotalAmount };
+//         }
+//       }
+// //join arrays
+//       const updatedItems = state.items.concat(action.item);
+//       const updatedTotalAmount =
+//         state.totalAmount + action.item.price * action.item.amount;
 
-      const existingCartItemIndex = state.items.findIndex(
-        (item) => item.id === action.item.id
-      );
+//       return { items: updatedItems, totalAmount: updatedTotalAmount };
+    
 
-      const existingCartItem = state.items[existingCartItemIndex];
-      let updatedItems;
-
-      if (existingCartItem) {
-        const updatedItem = {
-          ...existingCartItem,
-          amount: existingCartItem.amount + action.item.amount,
-        };
-        //newest added item
-        console.log(updatedItem);
-        updatedItems = [...state.items];
-        updatedItems[existingCartItemIndex] = updatedItem;
-        console.log(updatedItems);
-      } else {
-        updatedItems = state.items.concat(action.item);
-      }
-
-      return {
-        items: updatedItems,
-        totalAmount: updatedTotalAmount,
-      };
     case "REMOVE":
       return {};
     default:

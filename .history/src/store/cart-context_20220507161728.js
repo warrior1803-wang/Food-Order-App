@@ -13,34 +13,22 @@ const defaultCartState = {
 const cartRuducer = (state, action) => {
   switch (action.type) {
     case "ADD":
-      const updatedTotalAmount =
-        state.totalAmount + action.item.price * action.item.amount;
+        const updatedState = { ...state };
+ 
+        const itemIndex = updatedState.items.findIndex(
+          (item) => item.id === action.item.id
+        );
+     
+        if (itemIndex >= 0) {
+          updatedState.items[itemIndex].amount += action.item.amount;
+        } else {
+          updatedState.items.push(action.item);
+        }
+     
+        updatedState.cartTotalAmount += action.item.amount * action.item.price;
+     
+        return updatedState;
 
-      const existingCartItemIndex = state.items.findIndex(
-        (item) => item.id === action.item.id
-      );
-
-      const existingCartItem = state.items[existingCartItemIndex];
-      let updatedItems;
-
-      if (existingCartItem) {
-        const updatedItem = {
-          ...existingCartItem,
-          amount: existingCartItem.amount + action.item.amount,
-        };
-        //newest added item
-        console.log(updatedItem);
-        updatedItems = [...state.items];
-        updatedItems[existingCartItemIndex] = updatedItem;
-        console.log(updatedItems);
-      } else {
-        updatedItems = state.items.concat(action.item);
-      }
-
-      return {
-        items: updatedItems,
-        totalAmount: updatedTotalAmount,
-      };
     case "REMOVE":
       return {};
     default:

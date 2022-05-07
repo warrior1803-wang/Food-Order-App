@@ -28,7 +28,7 @@ const cartRuducer = (state, action) => {
           ...existingCartItem,
           amount: existingCartItem.amount + action.item.amount,
         };
-        //newest added item
+        //
         console.log(updatedItem);
         updatedItems = [...state.items];
         updatedItems[existingCartItemIndex] = updatedItem;
