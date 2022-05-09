@@ -21,7 +21,7 @@ const HeaderCartButton = (props) => {
       setBtnIsHighLighted(false)
     },300);
     return()=>{
-      clearTimeout(timer)
+      
     }
   }, [items]);
   return (
